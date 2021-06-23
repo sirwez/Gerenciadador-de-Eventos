@@ -18,18 +18,19 @@
     <div class="container mt-5">
       <form>
         <div class="form-group">
-          <label for="exampleFormControlInput1">Nome da Sala</label>
-          <input class="form-control" id="exampleFormControlInput1" name="nome">
-          <label for="exampleFormControlInput1">Capacidade</label>
-          <input class="form-control" id="exampleFormControlInput1" name="capacidade">
+          <label for="nome">Nome da Sala</label>
+          <input class="form-control mb-2" id="nome" name="nome">
+          <label for="capacidade">Capacidade</label>
+          <input class="form-control mb-2" id="capacidade" name="capacidade">
           
+          <label >Especialidades</label><br>
           <div class="form-check">
             
             <input class="form-check-input" type="checkbox" value="" id="Especialidade_1" name="Especialidade_1">
-            <label class="form-check-label" for="Especialidade_1"> Especialidade_1</label>
+            <label class="form-check-label" for="Especialidade_1"> Especialidade_1</label><br>
             
             <input class="form-check-input" type="checkbox" value="" id="Especialidade_2" name="Especialidade_2">
-            <label class="form-check-label" for="Especialidade_2"> Especialidade_2 </label>
+            <label class="form-check-label" for="Especialidade_2"> Especialidade_2 </label><br>
 
           </div>
 

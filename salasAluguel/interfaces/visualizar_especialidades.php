@@ -15,24 +15,13 @@
     </div>
     <div class="container mt-5">
       
-    <table class="table table-hover text-center">
-    <thead>
-        <tr>
-        <th scope="col">Especialidades</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td scope="row">Especialidade_1</td>
-        </tr>
-        <tr>
-        <td scope="row">Especialidade_2</td>
-        </tr>
-        <tr>
-        <td scope="row">Especialidade_3</td>
-        </tr>
-    </tbody>
-    </table>
+    <div class="card mx-auto text-center" style="width: 25rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Especialidade_1</li>
+        <li class="list-group-item">Especialidade_1</li>
+        <li class="list-group-item">Especialidade_1</li>
+    </ul>
+    </div>
 
     </div>
   </body>
