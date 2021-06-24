@@ -17,8 +17,6 @@
             </ul>
           </li>
         
-
-        
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Salas
@@ -29,12 +27,21 @@
             </ul>
           </li>
 
+          
+
         </ul>
         
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <a href="cadastrar_usuario.php" class="btn btn-outline-success" type="submit">Cadastrar Usuário</a>
         </form>
+
+
+        <form class="d-flex">
+        <a href="listar_usuarios.php" class="btn btn-outline-success" type="submit">Listar Usuários</a>
+        </form>
+
+      </div>
+
       </div>
     </div>
 </nav>

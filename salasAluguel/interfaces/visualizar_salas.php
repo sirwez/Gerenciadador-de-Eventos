@@ -19,6 +19,7 @@
     <thead>
         <tr>
         <th scope="col">Nome</th>
+        <th scope="col">Capacidade</th>
         <th scope="col">Descrição</th>
         <th scope="col">Especialidades</th>
         </tr>
@@ -26,16 +27,19 @@
     <tbody>
         <tr>
         <td>Sala 1</td>
+        <td>300</td>
         <td>Sala normal usada principalmente para aulas.</td>
         <td>Projetor, TV Pequena</td>
         </tr>
         <tr>
         <td>Sala 2</td>
+        <td>200</td>
         <td>Sala normal usada principalmente para aulas.</td>
         <td>Projetor, TV Pequena</td>
         </tr>
         <tr>
         <td>Cinema 1</td>
+        <td>100</td>
         <td>Sala grande com cadeiras acolchoadas utilizada para ver filmes.</td>
         <td>Projetor Grande</td>
         </tr>
