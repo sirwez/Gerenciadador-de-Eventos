@@ -28,16 +28,15 @@
           </li>
 
           
-
         </ul>
         
         <form class="d-flex">
-        <a href="cadastrar_usuario.php" class="btn btn-outline-success" type="submit">Cadastrar Usuário</a>
+        <a href="cadastrar_usuario.php" class="btn btn-outline-light border-0" type="submit">Cadastrar Usuário</a>
         </form>
 
 
         <form class="d-flex">
-        <a href="listar_usuarios.php" class="btn btn-outline-success" type="submit">Listar Usuários</a>
+        <a href="visualizar_usuarios.php" class="btn btn-outline-light border-0 ms-2" type="submit">Listar Usuários</a>
         </form>
 
       </div>
