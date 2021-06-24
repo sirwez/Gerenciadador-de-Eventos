@@ -25,7 +25,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="cadastrar_sala.php">Adicionar</a></li>
-              <li><a class="dropdown-item" href="#">Listar</a></li>
+              <li><a class="dropdown-item" href="visualizar_salas.php">Listar</a></li>
             </ul>
           </li>
 
