@@ -12,7 +12,7 @@ include_once 'php_action/db_connect.php';
   <body>
   <?php require_once 'interfaces/navbar.php';
 ?>
-    <div class="container my-5">
+    <div class="container my-5 text-center">
       <h1>Cadastro de Sala</h1>
     </div>
     <div class="container mt-5">
