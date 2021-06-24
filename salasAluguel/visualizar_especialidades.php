@@ -22,13 +22,13 @@ include_once 'php_action/db_connect.php';
     <div class="card mx-auto text-center" style="width: 25rem;">
     <ul class="list-group list-group-flush">
     <?php
-$sql = "SELECT * FROM especialidade";
-$result = mysqli_query($connect, $sql);
+    $sql = "SELECT * FROM especialidade";
+    $result = mysqli_query($connect, $sql);
 
-if (mysqli_num_rows($result) > 0):
+    if (mysqli_num_rows($result) > 0):
 
-    while ($dados = mysqli_fetch_array($result)):
-?>
+        while ($dados = mysqli_fetch_array($result)):
+    ?>
 
 <li class="list-group-item"><?php echo $dados['nome']; ?></li>
 
