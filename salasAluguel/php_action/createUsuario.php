@@ -14,14 +14,13 @@ if(isset($_POST['btn-cadastrarUsuario'])){
 $nome = clear($_POST['nome']);
 $cpf = clear($_POST['cpf']);
 $email = clear($_POST['email']);
-
-$sql = "INSERT INTO usuario (nome, cpf, email) VALUES ('$nome', '$cpf','$email',)";
+$sql = "INSERT INTO usuario (nome, cpf, email) VALUES ('$nome', '$cpf','$email')";
 
 if(mysqli_query($connect, $sql)){
-    $_SESSION['mensagem'] = "Especialidade cadastrada com sucesso";
+    $_SESSION['mensagem'] = "Usuario cadastrado com sucesso";
 header('Location: ../index.php');
 } else {
-    $_SESSION['mensagem'] = "erro ao cadastrar";
+    $_SESSION['mensagem'] = "Erro ao cadastrar";
     header('Location: ../index.php');
 }
 
