@@ -32,17 +32,7 @@
         <td>Projetor, TV Pequena</td>
         </tr>
         <tr>
-        <td>Sala 2</td>
-        <td>200</td>
-        <td>Sala normal usada principalmente para aulas.</td>
-        <td>Projetor, TV Pequena</td>
-        </tr>
-        <tr>
-        <td>Cinema 1</td>
-        <td>100</td>
-        <td>Sala grande com cadeiras acolchoadas utilizada para ver filmes.</td>
-        <td>Projetor Grande</td>
-        </tr>
+        
     </tbody>
     </table>
 
