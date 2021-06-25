@@ -14,7 +14,7 @@
       <h1>Cadastro de Usuário</h1>
     </div>
     <div class="container mt-5">
-    <form action="createUsuario.php" method="POST">
+    <form action="php_action/createUsuario.php" method="POST">
         <div class="form-group">
           <label for="nome">Nome</label>
           <input class="form-control mb-2" id="nome" name="nome" placeholder="Ex.: Ednaldo Pereira">
