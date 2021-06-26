@@ -17,8 +17,10 @@ if (isset($_POST['btn-cadastrarSala']))
     $array = $_POST;
     
     $nome = clear($_POST['nome']);
+    $desc = clear($_POST['desc']);
     $capacidade = clear($_POST['capacidade']);
-    $sql = "INSERT INTO sala (nome, capacidade) VALUES ('$nome', '$capacidade')";
+
+    $sql = "INSERT INTO sala (nome, resumo, capacidade) VALUES ('$nome', '$desc' , '$capacidade')";
 
     if (mysqli_query($connect, $sql))
     {

@@ -10,9 +10,11 @@
   <body>
   <?php require_once 'interfaces/navbar.php';
 ?>
+
     <div class="container my-5 text-center">
       <h1>Cadastro de Usuário</h1>
     </div>
+    <div class="card mx-auto" style="width: 75rem;">
     <div class="container mt-5">
     <form action="php_action/createUsuario.php" method="POST">
         <div class="form-group">
@@ -24,10 +26,12 @@
           <input type="email" class="form-control mb-2" id="email" name="email" placeholder="Ex.: ednaldopereira@dominio.com">
         </div>
         <div  class="text-center">
-        <button type="submit" class="btn btn-outline-secondary mt-5 mx-auto" name="btn-cadastrarUsuario">Cadastrar</button>
+        <button type="submit" class="btn btn-outline-success mt-5 mx-auto" name="btn-cadastrarUsuario">Cadastrar</button>
         </div>
         
       </form>
+    </div>
+    <br>
     </div>
   </body>
     <script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="//code.jquery.com/jquery-2.0.3.min.js"></script>

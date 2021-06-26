@@ -30,16 +30,12 @@
           
 
         </ul>
-        
-        <form class="d-flex">
+        <div class="d-grid gap-2 d-md-block">
+
         <a href="cadastrar_usuario.php" class="btn btn-outline-success" type="submit">Cadastrar Usuário</a>
-        </form>
 
-
-        <form class="d-flex">
         <a href="listar_usuarios.php" class="btn btn-outline-success" type="submit">Listar Usuários</a>
-        </form>
-
+</div>
       </div>
 
       </div>

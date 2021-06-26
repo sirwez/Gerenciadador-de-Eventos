@@ -15,13 +15,16 @@ include_once 'php_action/db_connect.php';
     <div class="container my-5 text-center">
       <h1>Cadastro de Sala</h1>
     </div>
+    <div class="card mx-auto" style="width: 50rem;">
     <div class="container mt-5">
       <form action="php_action/createSala.php" method="POST">
         <div class="form-group">
           <label for="nome">Nome da Sala</label>
           <input class="form-control mb-2" id="nome" name="nome">
+          <label for="desc">Descrição</label>
+          <input class="form-control mb-2" id="desc" name="desc" maxlength="255">
           <label for="capacidade">Capacidade</label>
-          <input class="form-control mb-2" type="number" id="capacidade" name="capacidade">
+          <input class="form-control mb-2" type="number" id="capacidade" name="capacidade" min="0">
           
           <label >Especialidades</label><br>
 
@@ -32,24 +35,27 @@ include_once 'php_action/db_connect.php';
 
                     if (mysqli_num_rows($result) > 0):
                         while ($dados = mysqli_fetch_array($result)):
-?>
+                        ?>
             <input class="form-check-input" type="checkbox" value="<?php echo $dados['nome'];?>" id="<?php echo $dados['nome'];?>" name="<?php echo $dados['nome'];?>"">
             <label class="form-check-label" for="Especialidade_1"> <?php echo $dados['nome'] ?></label><br>
 
             <?php endwhile;
-        else: ?>
-<p>Sem especialidades cadastradas!!!</p>
+           else: ?>
+               <p>Sem especialidades cadastradas!!!</p>
 							<?php
-    endif;
-?>
+                   endif;
+                ?>
           </div>
 
-        </div>
-        <div  class="text-center">
-        <button type="submit" class="btn btn-outline-secondary mt-5 mx-auto" name="btn-cadastrarSala">Criar</button>
-        </div>
+          </div>
+           <div  class="text-center">
+           <button type="submit" class="btn btn-outline-success mt-5 mx-auto " name="btn-cadastrarSala">Cadastrar</button>
+
+      </div>
         
       </form>
+      <br>
+    </div>
     </div>
   </body>
 </html>

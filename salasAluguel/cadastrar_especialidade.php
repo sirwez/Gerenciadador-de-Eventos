@@ -11,9 +11,10 @@
 ?>
 
 
-    <div class="container my-5">
+    <div class="container my-5 text-center">
       <h1>Cadastro de Especialidade</h1>
     </div>
+    <div class="card mx-auto" style="width: 50rem;">
     <div class="container mt-5">
 	<form action="php_action/createEspecialidade.php" method="POST">
         <div class="form-group">
@@ -22,10 +23,12 @@
 
         </div>
         <div  class="text-center">
-		<button type="submit"  class="btn btn-outline-secondary mt-5 mx-auto" name="btn-cadastrar"> Criar </button>
+		<button type="submit"  class="btn btn-outline-success mt-5 mx-auto" name="btn-cadastrar"> Cadastrar </button>
         </div>
         
       </form>
+    </div>
+    <br>
     </div>
   </body>
 </html>
