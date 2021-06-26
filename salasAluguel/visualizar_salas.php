@@ -38,10 +38,10 @@ include_once 'php_action/db_connect.php';
     ?>
     <tbody>
         <tr>
-        <td><?php echo $dados['nome']; ?></td>
-        <td><?php echo $dados['capacidade']; ?></td>
-        <td>Sala normal usada principalmente para aulas.</td>
-        <td >
+        <td class="text-center" style="width: 5rem;"><?php echo $dados['nome']; ?></td>
+        <td class="text-center" ><?php echo $dados['capacidade']; ?></td>
+        <td ><?php echo $dados['resumo']; ?></td>
+        <td  class="text-center" >
         <?php
             $sql2 = "SELECT * FROM sala_tem_especialidade";
             $result2 = mysqli_query($connect, $sql2);
@@ -70,7 +70,7 @@ include_once 'php_action/db_connect.php';
                 <?php
             endwhile;
             else: ?>
-                <td>Sem salas </td>
+                <td  style="width: 15rem;">Sem salas cadastradas</td>
      <?php
             endif;
             ?>
