@@ -1,8 +1,11 @@
+<?php
+include_once 'php_action/db_connect.php';
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <title>Lista de Salas</title>
+    <title>Lista de Usuários</title>
     <meta charset="utf-8">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -11,7 +14,7 @@
     <?php require("navbar.php"); ?>
 
     <div class="container my-5">
-      <h1>Lista de Salas</h1>
+      <h1>Lista de Usuários</h1>
     </div>
     <div class="container mt-5">
 
@@ -19,20 +22,28 @@
     <thead>
         <tr>
         <th scope="col">Nome</th>
-        <th scope="col">Capacidade</th>
-        <th scope="col">Descrição</th>
-        <th scope="col">Especialidades</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">CPF</th>
         </tr>
     </thead>
+
     <tbody>
-        <tr>
-        <td>Sala 1</td>
-        <td>300</td>
-        <td>Sala normal usada principalmente para aulas.</td>
-        <td>Projetor, TV Pequena</td>
-        </tr>
-        
-        
+
+    <?php
+    $sql = "SELECT * FROM usuario";
+    $result = mysqli_query($connect, $sql);
+    //if (nenhum usuario)
+    while ($dado = mysqli_fetch_assoc($result)){  
+        echo <<<END
+          <tr>
+          <td>{$dado['nome']}</td>
+          <td>{$dado['email']}</td>
+          <td>{$dado['cpf']}</td>
+          </tr>
+        END;
+    }
+    ?>
+
     </tbody>
     </table>
 

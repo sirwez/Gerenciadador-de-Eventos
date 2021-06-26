@@ -12,8 +12,8 @@ include_once 'php_action/db_connect.php';
   
   </head>
   <body>
-  <?php require_once 'interfaces/navbar.php';
-?>
+  <?php require("navbar.php"); ?>
+
     <div class="container my-5">
       <h1>Lista de Salas</h1>
     </div>
@@ -28,53 +28,31 @@ include_once 'php_action/db_connect.php';
         <th scope="col">Especialidades</th>
         </tr>
     </thead>
+    <tbody>
+
     <?php
     $sql = "SELECT * FROM sala";
     $result = mysqli_query($connect, $sql);
-
-    if (mysqli_num_rows($result) > 0):
-
-        while ($dados = mysqli_fetch_array($result)):
+    //if (nenhuma sala)
+    while ($dado = mysqli_fetch_assoc($result)){
+        $sql = "SELECT especialidade FROM sala_tem_especialidade where id_sala={$dado['id_sala']}";
+        $result2 = mysqli_query($connect, $sql);
+        $esp = '';
+        while ($dado2 = mysqli_fetch_assoc($result2)){
+            $esp .= ($dado2['especialidade'].', ');
+        }
+        $esp = substr($esp,0,-2);
+        echo <<<END
+            <tr>
+            <td>{$dado['nome']}</td>
+            <td>{$dado['capacidade']}</td>
+            <td>{$dado['resumo']}</td>
+            <td>{$esp}</td>
+        END;
+    }
     ?>
-    <tbody>
-        <tr>
-        <td class="text-center" style="width: 5rem;"><?php echo $dados['nome']; ?></td>
-        <td class="text-center" ><?php echo $dados['capacidade']; ?></td>
-        <td ><?php echo $dados['resumo']; ?></td>
-        <td  class="text-center" >
-        <?php
-            $sql2 = "SELECT * FROM sala_tem_especialidade";
-            $result2 = mysqli_query($connect, $sql2);
-            $dados2 = mysqli_fetch_array($result2);
-            $cont = 0;
-            while ($dados2 = mysqli_fetch_array($result2)):
-                if ($dados['id_sala'] == $dados2['id_sala']): ?>
-                    <span class="text-center"><?php echo $dados2['especialidade']; ?></span>
-                    <?php
-                else: ?>
-                    <?php
-                    $cont++;
-                endif;
-            ?>
-            <?php
-                if ($cont == 0):
-            ?>
-            <?php
-                endif;
-            endwhile;
-            ?>
-                    </td>
-                    </tr>
-                    
-                </tbody>
-                <?php
-            endwhile;
-            else: ?>
-                <td  style="width: 15rem;">Sem salas cadastradas</td>
-     <?php
-            endif;
-            ?>
+        </tr>
+    </tbody>
     </table>
-
 </div>
 </body>
