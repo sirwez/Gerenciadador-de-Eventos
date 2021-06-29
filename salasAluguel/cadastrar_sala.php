@@ -19,11 +19,11 @@ include_once 'php_action/db_connect.php';
       <form action="php_action/createSala.php" method="POST">
         <div class="form-group">
           <label for="nome">Nome da Sala</label>
-          <input class="form-control mb-2" id="nome" name="nome">
+          <input class="form-control mb-3" id="nome" name="nome">
           <label for="desc">Descrição</label>
-          <input class="form-control mb-2" id="desc" name="desc" maxlength="255">
+          <input class="form-control mb-3" id="desc" name="desc" maxlength="255">
           <label for="capacidade">Capacidade</label>
-          <input class="form-control mb-2" type="number" id="capacidade" name="capacidade" min="0">
+          <input class="form-control mb-3" type="number" id="capacidade" name="capacidade" min="0">
           
           <label >Especialidades</label><br>
 
@@ -35,7 +35,7 @@ include_once 'php_action/db_connect.php';
                     if (mysqli_num_rows($result) > 0):
                         while ($dados = mysqli_fetch_array($result)):
                         ?>
-            <input class="form-check-input" type="checkbox" value="<?php echo $dados['nome'];?>" id="<?php echo $dados['nome'];?>" name="<?php echo $dados['nome'];?>"">
+            <input class="form-check-input" type="checkbox" value="<?php echo $dados['nome'];?>" id="<?php echo $dados['nome'];?>" name="<?php echo $dados['nome'];?>">
             <label class="form-check-label" for="Especialidade_1"> <?php echo $dados['nome'] ?></label><br>
 
             <?php endwhile;

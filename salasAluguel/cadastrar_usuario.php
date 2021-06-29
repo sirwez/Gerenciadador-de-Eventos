@@ -17,11 +17,11 @@
     <form action="php_action/createUsuario.php" method="POST">
         <div class="form-group">
           <label for="nome">Nome</label>
-          <input class="form-control mb-2" id="nome" name="nome" placeholder="Ex.: Ednaldo Pereira">
+          <input class="form-control mb-3" id="nome" name="nome" placeholder="Ex.: Ednaldo Pereira">
           <label for="cpf">CPF</label>
-          <input type="text" class="form-control cpf-mask mb-2" id="cpf" name="cpf" placeholder="Ex.: 000.000.000-00">
+          <input type="text" class="form-control cpf-mask mb-3" id="cpf" name="cpf" placeholder="Ex.: 000.000.000-00">
           <label for="email">E-mail</label>
-          <input type="email" class="form-control mb-2" id="email" name="email" placeholder="Ex.: ednaldopereira@dominio.com">
+          <input type="email" class="form-control mb-3" id="email" name="email" placeholder="Ex.: ednaldopereira@dominio.com">
         </div>
         <div  class="text-center">
         <button type="submit" class="btn btn-outline-success mt-5 mx-auto" name="btn-cadastrarUsuario">Cadastrar</button>

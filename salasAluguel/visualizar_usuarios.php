@@ -14,7 +14,7 @@ include_once 'php_action/db_connect.php';
     <?php require("navbar.php"); ?>
 
     <div class="container my-5">
-      <h1>Lista de Usuários</h1>
+      <h1 class="text-center">Lista de Usuários</h1>
     </div>
     <div class="container mt-5">
 

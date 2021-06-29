@@ -13,25 +13,25 @@ function clear($input)
 
 if (isset($_POST['btn-cadastrarSala']))
 {
-
-    $array = $_POST;
     
     $nome = clear($_POST['nome']);
     $desc = clear($_POST['desc']);
     $capacidade = clear($_POST['capacidade']);
 
-    $sql = "INSERT INTO sala (nome, resumo, capacidade) VALUES ('$nome', '$desc' , '$capacidade')";
+    $sql = "INSERT INTO sala (nome, descricao, capacidade) VALUES ('$nome', '$desc' , '$capacidade')";
 
     if (mysqli_query($connect, $sql))
     {
 
         $id = mysqli_insert_id($connect);
-        foreach ($array as $key => $value)
+        foreach ($_POST as $key => $value)
         {
-            if ((strcmp($key, 'nome') != 0) && (strcmp($key, 'capacidade') != 0) && (strcmp($key, 'btn-cadastrarSala') != 0))
+            if ((strcmp($key, 'nome') != 0) && (strcmp($key, 'capacidade') != 0) && (strcmp($key, 'btn-cadastrarSala') != 0) && (strcmp($key, 'desc') != 0) )
             {
+                
                 $especialidade = $key;
-                $sql = "INSERT INTO sala_tem_especialidade (id_sala, especialidade) VALUES ('$id', '$especialidade')";
+                $novaEsp = str_replace('_', " ", $especialidade);
+                $sql = "INSERT INTO sala_tem_especialidade (id_sala, especialidade) VALUES ('$id', '$novaEsp')";
                 mysqli_query($connect, $sql);
             }
     

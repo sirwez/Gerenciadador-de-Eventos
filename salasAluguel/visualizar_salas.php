@@ -15,7 +15,7 @@ include_once 'php_action/db_connect.php';
   <?php require("navbar.php"); ?>
 
     <div class="container my-5">
-      <h1>Lista de Salas</h1>
+      <h1 class="text-center">Lista de Salas</h1>
     </div>
     <div class="container mt-5">
 
@@ -46,7 +46,7 @@ include_once 'php_action/db_connect.php';
             <tr>
             <td>{$dado['nome']}</td>
             <td>{$dado['capacidade']}</td>
-            <td>{$dado['resumo']}</td>
+            <td>{$dado['descricao']}</td>
             <td>{$esp}</td>
         END;
     }
