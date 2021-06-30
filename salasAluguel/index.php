@@ -26,7 +26,7 @@ date_default_timezone_set('America/Fortaleza');
         <th scope="col">Nome</th>
         <th scope="col">Organizador</th>
         <th scope="col">Data</th>
-        <th scope="col"> </th>
+        <th scope="col"> Ações </th>
         </tr>
     </thead>
     <tbody>
@@ -48,15 +48,25 @@ date_default_timezone_set('America/Fortaleza');
           $p = ' class="table-warning"';
         }
         echo <<<END
-            <tr {$p}>
+            <tr {$p}> 
             <td>{$dado['nome']}</td>
             <td>{$dado2['nome']}</td>
             <td>{$d}</td>
-            <td><a href="cadastrar_convidado.php?id={$dado['id_evento']}" type="submit" class="btn btn-outline-secondary btn-sm" name="btn-verMais" value="{$dado['id_evento']}">Ver Mais</a></td>
+            <td> <div class="d-flex"> 
+            <a href="cadastrar_convidado.php?id={$dado['id_evento']}" type="submit" class="btn btn-outline-secondary btn-sm me-3" name="btn-verMais" value="{$dado['id_evento']}">Ver Mais</a>
+
+            <form action="php_action/deleteRegistro.php" method="POST">
+              <button class="btn btn-outline-danger btn-sm " name="delete" type="submit" value="index-{$dado['id_evento']}">
+                Apagar
+              </button>
+            </form>
+            </div>
+            </td>
+          
+            </tr>
         END;
     }
     ?>
-        </tr>
     </tbody>
     </table>
 </div>

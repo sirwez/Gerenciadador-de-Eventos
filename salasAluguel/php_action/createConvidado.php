@@ -23,5 +23,8 @@ if (isset($_POST['btn-add']))
         }
 
     }
+    $_SESSION['mensagem'] = "Convidados com Sucesso";
+    header('Location: ../index.php');
 }
+
 ?>

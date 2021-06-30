@@ -12,16 +12,16 @@
     <div class="container my-5 text-center">
       <h1>Cadastro de Usuário</h1>
     </div>
-    <div class="card mx-auto" style="width: 75rem;">
+    <div class="card mx-auto" style="width: 50rem;">
     <div class="container mt-5">
     <form action="php_action/createUsuario.php" method="POST">
         <div class="form-group">
           <label for="nome">Nome</label>
-          <input class="form-control mb-3" id="nome" name="nome" placeholder="Ex.: Ednaldo Pereira">
+          <input class="form-control mb-3" id="nome" name="nome">
           <label for="cpf">CPF</label>
-          <input type="text" class="form-control cpf-mask mb-3" id="cpf" name="cpf" placeholder="Ex.: 000.000.000-00">
+          <input type="text" class="form-control cpf-mask mb-3" id="cpf" name="cpf">
           <label for="email">E-mail</label>
-          <input type="email" class="form-control mb-3" id="email" name="email" placeholder="Ex.: ednaldopereira@dominio.com">
+          <input type="email" class="form-control mb-3" id="email" name="email">
         </div>
         <div  class="text-center">
         <button type="submit" class="btn btn-outline-success mt-5 mx-auto" name="btn-cadastrarUsuario">Cadastrar</button>

@@ -11,8 +11,8 @@ CREATE TABLE `especialidade` (
 
 CREATE TABLE `evento` (
   `id_evento` int(11) NOT NULL,
-  `nome` varchar(20) NOT NULL,
-  `descricao` varchar(100) DEFAULT NULL,
+  `nome` varchar(50) NOT NULL,
+  `descricao` varchar(255) DEFAULT NULL,
   `data` date DEFAULT NULL,
   `organizador` int(11) DEFAULT NULL,
   `sala` int(11) DEFAULT NULL
@@ -21,7 +21,7 @@ CREATE TABLE `evento` (
 CREATE TABLE `sala` (
   `id_sala` int(11) NOT NULL,
   `nome` varchar(45) DEFAULT NULL,
-  `descricao` varchar(100) DEFAULT NULL,
+  `descricao` varchar(255) DEFAULT NULL,
   `capacidade` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -33,7 +33,7 @@ CREATE TABLE `sala_tem_especialidade` (
 CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
   `nome` varchar(60) NOT NULL,
-  `cpf` char(11) NOT NULL,
+  `cpf` char(14) NOT NULL,
   `email` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

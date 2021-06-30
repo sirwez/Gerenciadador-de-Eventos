@@ -47,6 +47,7 @@ function clear($input){
          "HAVING sala.id_sala NOT IN (select s.id_sala as id from sala as s, evento where s.id_sala = evento.sala and evento.data = '".$data."')";
 }
 
+$result = mysqli_query($connect, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -113,8 +114,8 @@ function clear($input){
             <?php
 
             $sqlu = "SELECT * FROM usuario";
-            $result = mysqli_query($connect, $sqlu);
-            while ($dado = mysqli_fetch_assoc($result)){  
+            $result2 = mysqli_query($connect, $sqlu);
+            while ($dado = mysqli_fetch_assoc($result2)){  
                 echo <<<END
                   <option value="{$dado['id_usuario']}">{$dado['nome']}</option>
                 END;
@@ -123,19 +124,24 @@ function clear($input){
             </select>
 
             <label for="nome" class="form-label">Nome do Evento</label>
-            <input class="form-control mb-3" id="nome" name="nome">
+            <input class="form-control mb-3" id="nome" name="nome" maxlength="50">
           
             <label for="descricao" class="form-label">Descrição do Evento</label>
-            <input type="text" class="form-control mb-3" id="descricao" name="descricao">
+            <input type="text" class="form-control mb-3" id="descricao" name="descricao" maxlength="255">
 
+    </div>
+  </div>
 
-          </div>
+  <?php
+  if ($result->num_rows==0):
+    echo <<<END
+    <h2>Nenhuma sala adequada encontrada</h2>
+    <a href="cadastrar_evento.php" class="btn border-0 btn-lg" type="submit">Voltar</a>
+    END;
+  else:
+  ?>
 
-        </div>
-
-
-          
-    <h1 class="text-center mt-5">Lista de Salas Disponíveis</h1>
+  <h1 class="text-center mt-5">Lista de Salas Disponíveis</h1>
 
   <table class="table table-hover">
   <thead>
@@ -150,8 +156,7 @@ function clear($input){
   <tbody>
 
   <?php
-  $result = mysqli_query($connect, $sql);
-  //if (nenhuma sala)
+
   while ($dado = mysqli_fetch_assoc($result)){
       $sql = "SELECT especialidade FROM sala_tem_especialidade where id_sala={$dado['id_sala']}";
       $result2 = mysqli_query($connect, $sql);
@@ -167,12 +172,18 @@ function clear($input){
           <td>{$dado['descricao']}</td>
           <td>{$esp}</td>
           <td><button type="submit" class="btn btn-outline-secondary btn-sm " name="btn-createSala" value="{$dado['id_sala']}">Selecionar</button></td>
+          </tr>
       END;
   }
   ?>
-  </tr>
   </tbody>
   </table>
+
+  <?php
+  endif;
+  ?>
+
+
   </form>
   </div>
   </body>

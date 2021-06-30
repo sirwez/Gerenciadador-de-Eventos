@@ -45,10 +45,27 @@ if (isset($_GET['id'])){
         <p class="form-control mb-3" id="sala">{$dados['sala']}</p>
         
         <label">Convidados</label>
+
         END;
 
-        
+        $sql = "select * from usuario, convidados where convidados.id_evento = {$_GET['id']} and convidados.id_usuario = usuario.id_usuario";
+        $result3 = mysqli_query($connect, $sql);
+        $conv = '';
+        $flag = false;
+        while ($dado2 = mysqli_fetch_assoc($result3)){
+            $conv = $conv . $dado2['nome'] . ', ';
+            $flag = true;
+        }
+        if ($flag)
+            $conv = substr($conv,0,-2);
+        else
+            $conv = 'Nenhum convidado';
 
+        echo <<<END
+            <p>
+                {$conv}
+            </p>
+        END;
 
         ?>
     </div></div>
@@ -58,7 +75,7 @@ if (isset($_GET['id'])){
             <form action="php_action/createConvidado.php" method="POST">
                 <?php
                 //select usuario.id_usuario from usuario where id_usuario != (select convidados.id_usuario from convidados where convidados.id_evento = 8)
-                    $sql = "select * from usuario HAVING usuario.id_usuario NOT IN (select convidados.id_usuario from convidados where convidados.id_evento = {$dado['id_evento']})";
+                    $sql = "select * from usuario where usuario.id_usuario!={$dado['organizador']} HAVING usuario.id_usuario NOT IN (select convidados.id_usuario from convidados where convidados.id_evento = {$dado['id_evento']})";
                     $result3 = mysqli_query($connect, $sql);
                     while ($usuario = mysqli_fetch_assoc($result3)){
                         echo <<<END

@@ -24,13 +24,15 @@ include_once 'php_action/db_connect.php';
         <th scope="col">Nome</th>
         <th scope="col">E-mail</th>
         <th scope="col">CPF</th>
+        <th scope="col">Apagar</th>
         </tr>
     </thead>
 
     <tbody>
 
     <?php
-    $sql = "SELECT * FROM usuario";
+    //usuario comum
+    $sql = "SELECT * FROM usuario HAVING id_usuario NOT IN (select organizador from evento)";
     $result = mysqli_query($connect, $sql);
     //if (nenhum usuario)
     while ($dado = mysqli_fetch_assoc($result)){  
@@ -39,6 +41,27 @@ include_once 'php_action/db_connect.php';
           <td>{$dado['nome']}</td>
           <td>{$dado['email']}</td>
           <td>{$dado['cpf']}</td>
+          <td>
+          <form action="php_action/deleteRegistro.php" method="POST">
+            <button class="btn btn-outline-danger btn-sm " name="delete" type="submit" value="visualizar_usuarios-{$dado['id_usuario']}">
+              Apagar
+            </button>
+          </form>
+          </td>
+          </tr>
+        END;
+    }
+    //usuario organizador
+    $sql = "SELECT distinct usuario.* FROM usuario, evento where id_usuario=organizador";
+    $result = mysqli_query($connect, $sql);
+    //if (nenhum usuario)
+    while ($dado = mysqli_fetch_assoc($result)){  
+        echo <<<END
+          <tr>
+          <td>{$dado['nome']}</td>
+          <td>{$dado['email']}</td>
+          <td>{$dado['cpf']}</td>
+          <td>Organizador</td>
           </tr>
         END;
     }

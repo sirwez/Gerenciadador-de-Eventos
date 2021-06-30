@@ -37,6 +37,17 @@
             </ul>
           </li>
 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Relatórios
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="relatorio_salas.php">Salas</a></li>
+              <li><a class="dropdown-item" href="relatorio_especialidades.php">Especialidades</a></li>
+              <li><a class="dropdown-item" href="relatorio_usuarios.php">Usuários</a></li>
+            </ul>
+          </li>
+
           
         </ul>
         
